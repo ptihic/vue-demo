@@ -1,4 +1,7 @@
 // https://github.com/shelljs/shelljs
+// export NODE_PATH=/opt/local/lib/node_modules/
+// echo $NODE_PATH
+
 require('shelljs/global')
 env.NODE_ENV = 'production'
 

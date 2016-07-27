@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Title from './components/title'
-import Item from './components/item'
+import Title from './components/title.vue'
+import Item from './components/item.vue'
 
 export default {
   components: {

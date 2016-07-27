@@ -1,14 +1,28 @@
 <template>
   <div class="item">
-    <h2>{{ msg }}</h2>
+    <span class="list">{{index}}.</span>
+    <p>
+      <a class="title" :href="href" target="_blank">{{{item.title}}}</a>
+      <span class="lj" v-show="showDomain">
+        ({{item.url | domain}})
+      </span>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      msg: 'Hacker News'
+  name: 'Item',
+  props: {
+    item: Object,
+    index: Number
+  },
+  computed: {
+    href (){
+      return this.item.url || ('#/item/'+this.item.id)
+    },
+    showDomain () {
+      return this.item.type === 'story'
     }
   }
 }
